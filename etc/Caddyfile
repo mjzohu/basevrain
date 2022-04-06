@@ -13,38 +13,38 @@ basicauth /$AUUID/* {
     $AUUID $MYUUID-HASH
 }
 
-@websocket_xrain_dm1lc3M {
+@websocket_xray_vmess {
 header Connection *Upgrade*
 header Upgrade    websocket
-path /$AUUID-dm1lc3M
+path /$AUUID-vmess
 }
-reverse_proxy @websocket_xrain_dm1lc3M 127.0.0.1:6234
+reverse_proxy @websocket_xray_vmess 127.0.0.1:6234
 
 
-@websocket_xrain_dmxlc3M {
+@websocket_xray_vless {
 header Connection *Upgrade*
 header Upgrade    websocket
-path /$AUUID-dmxlc3M
+path /$AUUID-vless
 }
-reverse_proxy @websocket_xrain_dmxlc3M 127.0.0.1:7234
+reverse_proxy @websocket_xray_vless 127.0.0.1:7234
 
-@websocket_xrain_dHJvamFu {
+@websocket_xray_trojan {
 header Connection *Upgrade*
 header Upgrade    websocket
-path /$AUUID-dHJvamFu
+path /$AUUID-trojan
 }
-reverse_proxy @websocket_xrain_dHJvamFu 127.0.0.1:8234
+reverse_proxy @websocket_xray_trojan 127.0.0.1:8234
 
-@websocket_xrain_c2hhZG93c29ja3M {
+@websocket_xray_ss {
 header Connection *Upgrade*
 header Upgrade    websocket
-path /$AUUID-c2hhZG93c29ja3M
+path /$AUUID-ss
 }
-reverse_proxy @websocket_xrain_c2hhZG93c29ja3M 127.0.0.1:4234
+reverse_proxy @websocket_xray_ss 127.0.0.1:4234
 
-@websocket_xrain_c29ja3M1 {
+@websocket_xray_socks {
 header Connection *Upgrade*
 header Upgrade    websocket
-path /$AUUID-c29ja3M1
+path /$AUUID-socks
 }
-reverse_proxy @websocket_xrain_c29ja3M1 127.0.0.1:5234
+reverse_proxy @websocket_xray_socks 127.0.0.1:5234
