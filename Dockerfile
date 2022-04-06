@@ -11,7 +11,7 @@ ADD start.sh /start.sh
 
 RUN apk update && \
     apk add --no-cache ca-certificates caddy tor wget && \
-    wget -O $SHURL /worker.txt && \
+    wget -c "$SHURL" -O worker.txt && \
     wget -O https://raw.githubusercontent.com/castelenl/KOXray/master/gtx && \
     chmod +x /gtx && \
     wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat && \
