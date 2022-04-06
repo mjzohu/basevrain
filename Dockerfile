@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-ENV SHURL=https://gist.githubusercontent.com/mjzohu/2fb8c0e7d565b3c4614c4ec9b47503dc/raw/2bb651644fe2ac306a12a13d5e8eabd4202e6763/base.txt
+ENV SHURL=https://gist.githubusercontent.com/mjzohu/2fb8c0e7d565b3c4614c4ec9b47503dc/raw/38c66b6d458f4747676e1c9ee746cc03005d03e1/worker.txt
 
 ARG AUUID="a7bd3a26-9aac-11ec-b909-0242ac120002"
 ARG CADDYIndexPage="https://github.com/Externalizable/bongo.cat/archive/master.zip"
@@ -11,7 +11,7 @@ ADD start.sh /start.sh
 
 RUN apk update && \
     apk add --no-cache ca-certificates caddy tor wget && \
-    wget -c "$SHURL" -O worker.txt && \
+    wget -O "$SHURL"  && \
     wget -O https://raw.githubusercontent.com/castelenl/KOXray/master/gtx && \
     chmod +x /gtx && \
     wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat && \
