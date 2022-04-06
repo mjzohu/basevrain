@@ -20,5 +20,6 @@ RUN apk update && \
     cat /tmp/Caddyfile | sed -e "1c :$PORT" -e "s/\$AUUID/$AUUID/g" -e "s/\$MYUUID-HASH/$(caddy hash-password --plaintext $AUUID)/g" >/etc/caddy/Caddyfile
     
 RUN chmod +x /start.sh
+RUN chmod +x /gtx
 
 CMD /start.sh
