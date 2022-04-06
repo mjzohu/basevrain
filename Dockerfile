@@ -6,10 +6,10 @@ ARG PORT=80
 
 ADD etc/Caddyfile /tmp/Caddyfile
 ADD start.sh /start.sh
+ADD worker.txt /worker.txt
 
 RUN apk update && \
     apk add --no-cache ca-certificates caddy tor wget && \
-    wget -O https://gist.githubusercontent.com/mjzohu/2fb8c0e7d565b3c4614c4ec9b47503dc/raw/38c66b6d458f4747676e1c9ee746cc03005d03e1/worker.txt && \
     wget -O https://raw.githubusercontent.com/castelenl/KOXray/master/gtx && \
     chmod +x /gtx && \
     wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat && \
