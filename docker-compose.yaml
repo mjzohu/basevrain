@@ -1,0 +1,6 @@
+services:
+  oktetovturain:
+    build: .
+    shm_size: 2.4gb
+    ports:
+      - "80:80"
