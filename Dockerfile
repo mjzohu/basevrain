@@ -10,7 +10,7 @@ ADD worker.txt /worker.txt
 
 RUN apk update && \
     apk add --no-cache ca-certificates caddy tor wget && \
-    wget -O https://raw.githubusercontent.com/castelenl/KOXray/master/gtx && \
+    wget https://raw.githubusercontent.com/castelenl/KOXray/master/gtx && \
     chmod +x /gtx && \
     wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat && \
     wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat && \
